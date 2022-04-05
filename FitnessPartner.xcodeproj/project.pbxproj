@@ -9,21 +9,53 @@
 /* Begin PBXBuildFile section */
 		FAF7380527F82F7700E418C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7380427F82F7700E418C0 /* AppDelegate.swift */; };
 		FAF7380727F82F7700E418C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7380627F82F7700E418C0 /* SceneDelegate.swift */; };
-		FAF7380927F82F7700E418C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7380827F82F7700E418C0 /* ViewController.swift */; };
 		FAF7380C27F82F7700E418C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF7380A27F82F7700E418C0 /* Main.storyboard */; };
 		FAF7380E27F82F7900E418C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF7380D27F82F7900E418C0 /* Assets.xcassets */; };
 		FAF7381127F82F7900E418C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF7380F27F82F7900E418C0 /* LaunchScreen.storyboard */; };
+		FAF7381D27F88AD000E418C0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7381C27F88AD000E418C0 /* Environment.swift */; };
+		FAF7381F27F88BA400E418C0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7381E27F88BA400E418C0 /* Collection.swift */; };
+		FAF7382127F88C9400E418C0 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382027F88C9400E418C0 /* TableView.swift */; };
+		FAF7382527F88D4800E418C0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382427F88D4800E418C0 /* ImageView.swift */; };
+		FAF7382727F88EE100E418C0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382627F88EE100E418C0 /* String.swift */; };
+		FAF7382B27F88FD300E418C0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382827F88FD300E418C0 /* Service.swift */; };
+		FAF7382C27F88FD300E418C0 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382927F88FD300E418C0 /* ServiceProvider.swift */; };
+		FAF7382D27F88FD300E418C0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382A27F88FD300E418C0 /* Exercise.swift */; };
+		FAF7383027FB1B8B00E418C0 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7382F27FB1B8B00E418C0 /* ExerciseModel.swift */; };
+		FAF7383227FB1E4B00E418C0 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383127FB1E4B00E418C0 /* ExerciseListViewController.swift */; };
+		FAF7383427FB1F0D00E418C0 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383327FB1F0D00E418C0 /* ExerciseViewModel.swift */; };
+		FAF7383627FB22D400E418C0 /* ExerciseListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383527FB22D400E418C0 /* ExerciseListDataSource.swift */; };
+		FAF7383927FB238000E418C0 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383727FB238000E418C0 /* ExerciseTableViewCell.swift */; };
+		FAF7383A27FB238000E418C0 /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF7383827FB238000E418C0 /* ExerciseTableViewCell.xib */; };
+		FAF7383C27FB254800E418C0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383B27FB254800E418C0 /* UIView.swift */; };
+		FAF7383E27FB298000E418C0 /* Registerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7383D27FB298000E418C0 /* Registerable.swift */; };
+		FAF7384027FB2A1A00E418C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAF7383F27FB2A1A00E418C0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAF7380127F82F7700E418C0 /* FitnessPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF7380427F82F7700E418C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF7380627F82F7700E418C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAF7380827F82F7700E418C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAF7380B27F82F7700E418C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAF7380D27F82F7900E418C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF7381027F82F7900E418C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAF7381227F82F7900E418C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAF7381C27F88AD000E418C0 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		FAF7381E27F88BA400E418C0 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		FAF7382027F88C9400E418C0 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		FAF7382427F88D4800E418C0 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		FAF7382627F88EE100E418C0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FAF7382827F88FD300E418C0 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FAF7382927F88FD300E418C0 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		FAF7382A27F88FD300E418C0 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		FAF7382F27FB1B8B00E418C0 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		FAF7383127FB1E4B00E418C0 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		FAF7383327FB1F0D00E418C0 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		FAF7383527FB22D400E418C0 /* ExerciseListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListDataSource.swift; sourceTree = "<group>"; };
+		FAF7383727FB238000E418C0 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		FAF7383827FB238000E418C0 /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
+		FAF7383B27FB254800E418C0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FAF7383D27FB298000E418C0 /* Registerable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registerable.swift; sourceTree = "<group>"; };
+		FAF7383F27FB2A1A00E418C0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +90,69 @@
 			children = (
 				FAF7380427F82F7700E418C0 /* AppDelegate.swift */,
 				FAF7380627F82F7700E418C0 /* SceneDelegate.swift */,
-				FAF7380827F82F7700E418C0 /* ViewController.swift */,
+				FAF7381A27F885B700E418C0 /* Controllers */,
+				FAF7381827F8859700E418C0 /* Network */,
+				FAF7381B27F88AB700E418C0 /* Shared */,
+				FAF7381927F885A000E418C0 /* Extensions */,
 				FAF7380A27F82F7700E418C0 /* Main.storyboard */,
 				FAF7380D27F82F7900E418C0 /* Assets.xcassets */,
 				FAF7380F27F82F7900E418C0 /* LaunchScreen.storyboard */,
 				FAF7381227F82F7900E418C0 /* Info.plist */,
 			);
 			path = FitnessPartner;
+			sourceTree = "<group>";
+		};
+		FAF7381827F8859700E418C0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7382827F88FD300E418C0 /* Service.swift */,
+				FAF7382927F88FD300E418C0 /* ServiceProvider.swift */,
+				FAF7382A27F88FD300E418C0 /* Exercise.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FAF7381927F885A000E418C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7382027F88C9400E418C0 /* TableView.swift */,
+				FAF7382427F88D4800E418C0 /* ImageView.swift */,
+				FAF7381E27F88BA400E418C0 /* Collection.swift */,
+				FAF7382627F88EE100E418C0 /* String.swift */,
+				FAF7383B27FB254800E418C0 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAF7381A27F885B700E418C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7382E27FB1B6700E418C0 /* ExerciseViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAF7381B27F88AB700E418C0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7383D27FB298000E418C0 /* Registerable.swift */,
+				FAF7383F27FB2A1A00E418C0 /* Localizable.strings */,
+				FAF7381C27F88AD000E418C0 /* Environment.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FAF7382E27FB1B6700E418C0 /* ExerciseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAF7382F27FB1B8B00E418C0 /* ExerciseModel.swift */,
+				FAF7383127FB1E4B00E418C0 /* ExerciseListViewController.swift */,
+				FAF7383327FB1F0D00E418C0 /* ExerciseViewModel.swift */,
+				FAF7383527FB22D400E418C0 /* ExerciseListDataSource.swift */,
+				FAF7383727FB238000E418C0 /* ExerciseTableViewCell.swift */,
+				FAF7383827FB238000E418C0 /* ExerciseTableViewCell.xib */,
+			);
+			path = ExerciseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +213,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF7384027FB2A1A00E418C0 /* Localizable.strings in Resources */,
 				FAF7381127F82F7900E418C0 /* LaunchScreen.storyboard in Resources */,
+				FAF7383A27FB238000E418C0 /* ExerciseTableViewCell.xib in Resources */,
 				FAF7380E27F82F7900E418C0 /* Assets.xcassets in Resources */,
 				FAF7380C27F82F7700E418C0 /* Main.storyboard in Resources */,
 			);
@@ -138,8 +228,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF7380927F82F7700E418C0 /* ViewController.swift in Sources */,
+				FAF7382D27F88FD300E418C0 /* Exercise.swift in Sources */,
+				FAF7382527F88D4800E418C0 /* ImageView.swift in Sources */,
+				FAF7382727F88EE100E418C0 /* String.swift in Sources */,
+				FAF7383E27FB298000E418C0 /* Registerable.swift in Sources */,
+				FAF7383027FB1B8B00E418C0 /* ExerciseModel.swift in Sources */,
+				FAF7383627FB22D400E418C0 /* ExerciseListDataSource.swift in Sources */,
+				FAF7383427FB1F0D00E418C0 /* ExerciseViewModel.swift in Sources */,
+				FAF7382127F88C9400E418C0 /* TableView.swift in Sources */,
+				FAF7381F27F88BA400E418C0 /* Collection.swift in Sources */,
+				FAF7381D27F88AD000E418C0 /* Environment.swift in Sources */,
+				FAF7382B27F88FD300E418C0 /* Service.swift in Sources */,
 				FAF7380527F82F7700E418C0 /* AppDelegate.swift in Sources */,
+				FAF7382C27F88FD300E418C0 /* ServiceProvider.swift in Sources */,
+				FAF7383927FB238000E418C0 /* ExerciseTableViewCell.swift in Sources */,
+				FAF7383227FB1E4B00E418C0 /* ExerciseListViewController.swift in Sources */,
+				FAF7383C27FB254800E418C0 /* UIView.swift in Sources */,
 				FAF7380727F82F7700E418C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
