@@ -9,7 +9,11 @@ import Foundation
 import Combine
 import os.log
 
-class ExerciseListViewModel:NSObject {
+protocol ExerciseRepository:AnyObject {
+   func getExerciseList()
+}
+
+class ExerciseListViewModel:ExerciseRepository {
     //MARK: - Properties
     private var provider : ServiceProvider<ExerciseService>?
     private  var subscription:AnyCancellable?
@@ -18,19 +22,20 @@ class ExerciseListViewModel:NSObject {
     @Published var isLoading: Bool = false
     
     //MARK: - Life Cycles
-    override init() {
-        super.init()
-        provider = ServiceProvider<ExerciseService>()
-        getExerciseList()
+    init(provider:ServiceProvider<ExerciseService>) {
+        self.provider = provider
     }
     
     deinit{
         subscription?.cancel()
     }
     //MARK: - Helpers
+    /**
+     Fetching exercise from the api
+     */
     func getExerciseList(){
         isLoading = true
-        subscription = provider?.load(service: .getExercise , decodeType: Exercise.self).sink { [weak self] completion in
+        subscription = provider?.load(service: .getExerciseList , decodeType: Exercise.self).sink { [weak self] completion in
             self?.isLoading = false
             switch completion {
             case let .failure(error):

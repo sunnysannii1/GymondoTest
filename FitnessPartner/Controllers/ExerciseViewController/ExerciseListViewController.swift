@@ -7,16 +7,17 @@
 
 import UIKit
 import Combine
+import SwiftUI
 class ExerciseListViewController: UIViewController {
     //MARK: -  Properties
-    private lazy var exerciseTableView:UITableView = {
+     lazy var exerciseTableView:UITableView = {
         let tv = UITableView()
         tv.delegate = self
         tv.register(types: ExerciseTableViewCell.self)
         return tv
     }()
-    private lazy var exerciseViewModel = {
-       ExerciseListViewModel()
+    lazy var exerciseViewModel = {
+        ExerciseListViewModel(provider: ServiceProvider<ExerciseService>())
     }()
     private var dataSource : ExerciseTableViewDataSource<ExerciseTableViewCell,ExerciseItem>!
     private var bag = Set<AnyCancellable>()
@@ -25,6 +26,7 @@ class ExerciseListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        fetchData()
         callToViewModelForUIUpdate()
     }
     
@@ -34,8 +36,10 @@ class ExerciseListViewController: UIViewController {
         view.addSubview(exerciseTableView)
         exerciseTableView.constrainEdges(to: self.view)
     }
-    
-   private func callToViewModelForUIUpdate(){
+    /**
+     Updating UI and bindings
+     */
+    func callToViewModelForUIUpdate(){
        exerciseViewModel.$exerciseItems
            .receive(on: DispatchQueue.main)
            .sink { [weak self] items in
@@ -50,7 +54,15 @@ class ExerciseListViewController: UIViewController {
            }
            .store(in: &bag)
     }
-    
+    /**
+     Fetch Exercise List
+     */
+    private func fetchData(){
+        exerciseViewModel.getExerciseList()
+    }
+    /**
+     setup DataSource for TableView
+     */
     private func updateDataSource(_ source:ExerciseList){
        self.dataSource = ExerciseTableViewDataSource(cellIdentifier: ExerciseTableViewCell.identifier, items: source, configureCell: { (cell, item) in
             cell.configure(item)
@@ -58,11 +70,15 @@ class ExerciseListViewController: UIViewController {
         exerciseTableView.dataSource = dataSource
         exerciseTableView.reloadData()
     }
-    
+    /**
+     loading View
+     */
     private func showLoader(){
         exerciseTableView.setLoadingView()
     }
-    
+    /**
+     hide loading View
+     */
     private func hideLoader(){
         exerciseTableView.resetBackgroundView()
     }
@@ -71,6 +87,10 @@ class ExerciseListViewController: UIViewController {
 extension ExerciseListViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+         let item = dataSource.item(at: indexPath.row)
+         if let id = item?.id {
+            let vc = UIHostingController(rootView: ExerciseDetailView(id:id))
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

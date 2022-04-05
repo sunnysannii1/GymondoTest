@@ -20,6 +20,10 @@ class ExerciseTableViewDataSource<CELL : UITableViewCell,T> : NSObject, UITableV
         self.items =  items
         self.configureCell = configureCell
     }
+    
+    func item(at index:Int)->T?{
+        return items[safe:index]
+    }
     //MARK: - Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items.count

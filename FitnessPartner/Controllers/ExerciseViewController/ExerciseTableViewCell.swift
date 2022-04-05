@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ExerciseTableViewCell: UITableViewCell,Registerable {
     //MARK: - outlets
     @IBOutlet private(set) weak var exerciseImage: UIImageView!
@@ -18,7 +18,11 @@ class ExerciseTableViewCell: UITableViewCell,Registerable {
     }
     //MARK: - Helpers
     func configure(_ item:ExerciseItem){
-        exerciseImage.load(urlStr: item.image)
+        if let img = item.image,let url = URL(string: img){
+            exerciseImage.kf.setImage(with: url,placeholder: Constants.placeholderImage)
+        }else{
+            exerciseImage.image = Constants.placeholderImage
+        }
         lblExerciseName.text = item.name
     }
 }

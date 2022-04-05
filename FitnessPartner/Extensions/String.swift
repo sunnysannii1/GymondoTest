@@ -9,8 +9,8 @@ import UIKit
 
 extension String {
     ///to getBundle images
-    var bundleImage:UIImage? {
-        return UIImage(named: self)
+    var bundleImage:UIImage {
+        return UIImage(named: self) ?? UIImage()
     }
     ///Localization
     static func localizedString(_ key: String) -> String {

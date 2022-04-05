@@ -8,6 +8,7 @@ import Foundation
 
 struct Environment {
     
+    static let apiVersion = "/api/v2/"
    static var baseURL: String {
         return value(of: .BASEURL)
     }

@@ -8,8 +8,8 @@
 import Foundation
 
 enum ExerciseService {
-    case getExercise
-    
+    case getExerciseList
+    case getExerciseDetail(id:Int)
 }
 
 extension ExerciseService: Service {
@@ -19,20 +19,15 @@ extension ExerciseService: Service {
 
     var path: String {
         switch self {
-        case .getExercise:
-            return "/api/v2/exerciseinfo"
+        case .getExerciseList:
+            return "\(Environment.apiVersion)exerciseinfo"
+        case .getExerciseDetail(let id):
+            return "\(Environment.apiVersion)exerciseinfo/\(id)"
         }
     }
 
     var parameters: [String: Any]? {
-        // default params
-        var params: [String: Any] = [:]
-        
-        switch self {
-        case .getExercise:
-            params = .init()
-        }
-        return params
+        return nil
     }
 
     var method: ServiceMethod {
