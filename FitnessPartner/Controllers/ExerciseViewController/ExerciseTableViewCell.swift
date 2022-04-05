@@ -10,7 +10,7 @@ import UIKit
 class ExerciseTableViewCell: UITableViewCell,Registerable {
     //MARK: - outlets
     @IBOutlet private(set) weak var exerciseImage: UIImageView!
-    @IBOutlet private(set)weak var lblExerciseName: UILabel!
+    @IBOutlet private(set) weak var lblExerciseName: UILabel!
     
     //MARK: - Life Cycles
     override func awakeFromNib() {

@@ -20,7 +20,7 @@ extension ExerciseService: Service {
     var path: String {
         switch self {
         case .getExercise:
-            return "/api/v2/exercise"
+            return "/api/v2/exerciseinfo"
         }
     }
 

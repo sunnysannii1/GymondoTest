@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF7382E27FB1B6700E418C0 /* ExerciseViewController */,
+				FAF7384127FC59B700E418C0 /* ExerciseDetailView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +154,13 @@
 				FAF7383827FB238000E418C0 /* ExerciseTableViewCell.xib */,
 			);
 			path = ExerciseViewController;
+			sourceTree = "<group>";
+		};
+		FAF7384127FC59B700E418C0 /* ExerciseDetailView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExerciseDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

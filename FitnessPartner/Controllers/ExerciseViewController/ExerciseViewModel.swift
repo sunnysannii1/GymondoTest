@@ -14,13 +14,9 @@ class ExerciseListViewModel:NSObject {
     private var provider : ServiceProvider<ExerciseService>?
     private  var subscription:AnyCancellable?
     private lazy var logger = Logger(subsystem: String(describing: self), category: "UI")
-    private(set) var exerciseItems: [ExerciseItem]!{
-        didSet{
-            bindExerciseViewModelToController()
-        }
-    }
+    @Published var exerciseItems: [ExerciseItem] = []
+    @Published var isLoading: Bool = false
     
-    var bindExerciseViewModelToController : (() -> ()) = {}
     //MARK: - Life Cycles
     override init() {
         super.init()
@@ -33,7 +29,9 @@ class ExerciseListViewModel:NSObject {
     }
     //MARK: - Helpers
     func getExerciseList(){
+        isLoading = true
         subscription = provider?.load(service: .getExercise , decodeType: Exercise.self).sink { [weak self] completion in
+            self?.isLoading = false
             switch completion {
             case let .failure(error):
                 self?.logger.log(level: .error, "Couldn't get exercise List ,\(error.localizedDescription)")
@@ -41,7 +39,7 @@ class ExerciseListViewModel:NSObject {
                 self?.logger.log(level: .info, "GOTCHHA")
             }
         } receiveValue: {[weak self] value in
-            self?.exerciseItems = value.results
+            self?.exerciseItems = value.results ?? []
         }
     }
     

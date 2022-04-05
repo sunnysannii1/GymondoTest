@@ -6,21 +6,21 @@
 //
 
 import UIKit
-
+import Combine
 class ExerciseListViewController: UIViewController {
     //MARK: -  Properties
     private lazy var exerciseTableView:UITableView = {
         let tv = UITableView()
+        tv.delegate = self
         tv.register(types: ExerciseTableViewCell.self)
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.setLoadingView()
         return tv
     }()
     private lazy var exerciseViewModel = {
        ExerciseListViewModel()
     }()
     private var dataSource : ExerciseTableViewDataSource<ExerciseTableViewCell,ExerciseItem>!
-    
+    private var bag = Set<AnyCancellable>()
+
     //MARK: - LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +36,41 @@ class ExerciseListViewController: UIViewController {
     }
     
    private func callToViewModelForUIUpdate(){
-        self.exerciseViewModel.bindExerciseViewModelToController = {[weak self] in
-            self?.updateDataSource()
-        }
+       exerciseViewModel.$exerciseItems
+           .receive(on: DispatchQueue.main)
+           .sink { [weak self] items in
+               self?.updateDataSource(items)
+           }
+           .store(in: &bag)
+       //Loading
+       exerciseViewModel.$isLoading
+           .receive(on: DispatchQueue.main)
+           .sink { [weak self] loading in
+               loading ? self?.showLoader() : self?.hideLoader()
+           }
+           .store(in: &bag)
     }
     
-   private func updateDataSource(){
-       self.dataSource = ExerciseTableViewDataSource(cellIdentifier: ExerciseTableViewCell.identifier, items: self.exerciseViewModel.exerciseItems, configureCell: { (cell, item) in
+    private func updateDataSource(_ source:ExerciseList){
+       self.dataSource = ExerciseTableViewDataSource(cellIdentifier: ExerciseTableViewCell.identifier, items: source, configureCell: { (cell, item) in
             cell.configure(item)
         })
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.exerciseTableView.dataSource = self?.dataSource
-            self?.exerciseTableView.resetBackgroundView()
-            self?.exerciseTableView.reloadData()
-        }
+        exerciseTableView.dataSource = dataSource
+        exerciseTableView.reloadData()
     }
     
+    private func showLoader(){
+        exerciseTableView.setLoadingView()
+    }
+    
+    private func hideLoader(){
+        exerciseTableView.resetBackgroundView()
+    }
+}
+
+extension ExerciseListViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }
